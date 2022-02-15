@@ -10,32 +10,31 @@ import java.util.Set;
 public class Gym {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator",  sequenceName = "course_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "sequenceGenerator",  sequenceName = "gym_id_seq", allocationSize = 1)
     private Long id;
-
+    
     private String address;
 
     @Column(name = "open_time")
     private String openTime;
-
 
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<SeasonPass> passes = new HashSet<>();
 
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Training> trainings = new HashSet<>();
-
+    
     public Gym(){};
-
+    
     public Gym(String address,String openTime){
         this.address = address;
         this.openTime = openTime;
     }
-
+    
     public String getAddress() {
         return address;
     }
-
+    
     public void setAddress(String address) {
         this.address = address;
     }
