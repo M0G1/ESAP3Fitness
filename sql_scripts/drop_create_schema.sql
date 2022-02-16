@@ -1,13 +1,12 @@
-DROP TABLE IF EXISTS gyms;
 DROP TABLE IF EXISTS season_pass;
-DROP TABLE IF EXISTS trainings;
+DROP TABLE IF EXISTS gyms;
 
 CREATE TABLE gyms
 (
     gym_id SERIAL PRIMARY KEY,
     address VARCHAR(255),
     gym_num INTEGER,
-    open_time varchar(15)
+    open_time varchar(255)
 );
 
 CREATE TABLE season_pass
@@ -18,12 +17,4 @@ CREATE TABLE season_pass
     duration_m INTEGER
 );
 
-CREATE TABLE trainings
-(
-    train_id SERIAL PRIMARY KEY,
-    gym_id BIGINT REFERENCES gyms,
-    training_name VARCHAR(255),
-    trainer_name VARCHAR(255),
-    minutes INTEGER
-);
 

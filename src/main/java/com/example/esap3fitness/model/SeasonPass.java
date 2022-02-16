@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name="season_pass")
 public class SeasonPass {
 
     @Id
@@ -56,10 +56,10 @@ public class SeasonPass {
     }
 
     public SeasonPass() {
-    };
+    }
 
     public SeasonPass(String fullName, Integer durationM) {
         this.durationM = durationM;
         this.fullName = fullName;
-    };
+    }
 }

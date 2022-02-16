@@ -6,35 +6,39 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "gyms")
 public class Gym {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator",  sequenceName = "gym_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "sequenceGenerator", sequenceName = "gym_id_seq", allocationSize = 1)
     private Long id;
-    
+
     private String address;
 
     @Column(name = "open_time")
     private String openTime;
 
+    @Column(name = "gym_num")
+    private Integer gymNum;
+
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<SeasonPass> passes = new HashSet<>();
 
-    @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private Set<Training> trainings = new HashSet<>();
-    
-    public Gym(){};
-    
-    public Gym(String address,String openTime){
+//    @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+//    private Set<Training> trainings = new HashSet<>();
+
+    public Gym() {
+    }
+
+    public Gym(String address, String openTime) {
         this.address = address;
         this.openTime = openTime;
     }
-    
+
     public String getAddress() {
         return address;
     }
-    
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -55,15 +59,23 @@ public class Gym {
         this.passes = passes;
     }
 
-    public Set<Training> getTrainings() {
-        return trainings;
-    }
-
-    public void setTrainings(Set<Training> trainings) {
-        this.trainings = trainings;
-    }
+//    public Set<Training> getTrainings() {
+//        return trainings;
+//    }
+//
+//    public void setTrainings(Set<Training> trainings) {
+//        this.trainings = trainings;
+//    }
 
     public Long getId() {
         return id;
+    }
+
+    public Integer getGymNum() {
+        return gymNum;
+    }
+
+    public void setGymNum(Integer gymNum) {
+        this.gymNum = gymNum;
     }
 }

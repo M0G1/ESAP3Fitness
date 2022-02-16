@@ -13,11 +13,3 @@ INSERT INTO public.season_pass (user_id, gym_id, full_name, duration_m) VALUES (
 INSERT INTO public.season_pass (user_id, gym_id, full_name, duration_m) VALUES (1008, 101, 'Alex Johnson', 10);
 INSERT INTO public.season_pass (user_id, gym_id, full_name, duration_m) VALUES (1009, 102, 'Timur Nixon', 5);
 INSERT INTO public.season_pass (user_id, gym_id, full_name, duration_m) VALUES (1010, 101, 'Tatyana Brickson', 9);
-
-INSERT INTO public.trainings (train_id, gym_id, training_name, trainer_name, minutes) VALUES (1000, 102, 'boxing', 'Mike Tyson', 90);
-INSERT INTO public.trainings (train_id, gym_id, training_name, trainer_name, minutes) VALUES (1001, 101, 'pilates', 'Willy Wonka', 45);
-INSERT INTO public.trainings (train_id, gym_id, training_name, trainer_name, minutes) VALUES (1002, 100, 'kickboxing', 'Olaf Oliwander', 60);
-INSERT INTO public.trainings (train_id, gym_id, training_name, trainer_name, minutes) VALUES (1003, 101, 'gymnastics', 'Mister Fantastic', 120);
-INSERT INTO public.trainings (train_id, gym_id, training_name, trainer_name, minutes) VALUES (1004, 102, 'slim yoga', 'Magister Yoda', 30);
-
-
