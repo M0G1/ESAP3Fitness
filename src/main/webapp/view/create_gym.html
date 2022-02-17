@@ -15,8 +15,8 @@
             <input class="form-control" id="address" th:field="*{address}" type="text" required/>
         </div>
         <div class="form-group">
-            <label for="gymNum">Number of the gym: </label>
-            <input class="form-control" id="gymNum" th:field="*{gymNum}" type="text" required/>
+            <label for="gymNum">Room number: </label>
+            <input class="form-control" id="gymNum" th:field="*{gymNum}" type="number" min="1" required/>
         </div>
         <div class="form-group">
             <label for="openTime">Opening hours: </label>

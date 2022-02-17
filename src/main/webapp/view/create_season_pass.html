@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label for="durationM">Duration (months): </label>
-            <input class="form-control" id="durationM" th:field="*{durationM}" type="text" required/>
+            <input class="form-control" id="durationM" th:field="*{durationM}" type="number" min="0" required/>
         </div>
         <br>
         <input type="submit" value="Create" class="btn btn-primary"/>

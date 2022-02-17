@@ -9,10 +9,19 @@
 <div class="container w-50">
     <form th:method="patch" th:action="@{/gyms/{id}/update(id=${gym.id})}" th:object="${gym}">
         <h1>Update gym</h1>
-        <input type="hidden" th:field="*{id}" value="<%= group.getId() %>">
+        <input type="hidden" th:field="*{id}">
+
         <div class="form-group">
-            <label for="year">Year: </label>
-            <input class="form-control" id="year" th:field="*{year}" type="number" min="1" max="6" required/>
+            <label for="address">Address: </label>
+            <input class="form-control" id="address" th:field="*{address}" type="text" required/>
+        </div>
+        <div class="form-group">
+            <label for="gymNum">Room number: </label>
+            <input class="form-control" id="gymNum" th:field="*{gymNum}" type="number" min="1" required/>
+        </div>
+        <div class="form-group">
+            <label for="openTime">Opening hours: </label>
+            <input class="form-control" id="openTime" th:field="*{openTime}" type="text" required/>
         </div>
         <br>
         <input type="submit" value="Update" class="btn btn-primary"/>

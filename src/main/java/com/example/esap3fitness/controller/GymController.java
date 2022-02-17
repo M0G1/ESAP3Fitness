@@ -37,25 +37,26 @@ public class GymController {
     }
 
     @GetMapping("/{id}/update")
-    public String getUpdatePage(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("gym", gymService.get(id));
+    public String getUpdatePage(@PathVariable("id") Long gymId, Model model) {
+        model.addAttribute("gym", gymService.get(gymId));
         return "update_gym";
     }
 
     @PatchMapping("/{id}/update")
-    public String update(@PathVariable("id") Long id, @ModelAttribute Gym gym) {
-        gymService.update(id, gym);
+    public String update(@PathVariable("id") Long gymId, @ModelAttribute Gym gym) {
+        gymService.update(gymId, gym);
         return "redirect:/gyms";
     }
 
     @GetMapping("/{id}/season_passes")
-    public String getSeasonPasses(@PathVariable("id") Long id, Model model){
-        model.addAttribute("seasonPasses",gymService.getSeasonPasses(id));
+    public String getSeasonPasses(@PathVariable("id") Long gymId, Model model) {
+        model.addAttribute("seasonPasses", gymService.getSeasonPasses(gymId));
+        model.addAttribute("gym", gymService.get(gymId));
         return "show_gym_season_passes";
     }
 
     @DeleteMapping("/{id}/delete")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable Long id) {
         gymService.delete(id);
         return "redirect:/gyms";
     }
